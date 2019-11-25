@@ -11,12 +11,13 @@ body {
 
 .console {
     position: fixed;
-    font-family: monospace,monospace;
+    font-family: monospace, monospace;
     color: #fff;
     width: calc(100% - 3em);
     max-height: 300px;
     min-height: 300px;
     overflow-y: auto;
+    overflow-x: hidden;
     margin: 1em 1em;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 0.5em;
@@ -27,13 +28,13 @@ body {
 }
 
 .console-input {
-    font-family: monospace,monospace;
+    font-family: monospace, monospace;
     background-color: transparent;
     border: none;
     outline: none;
     color: #fff;
     margin: 0;
-    padding: 5px 0 0;
+    padding: 5px 0 0 ;
     box-sizing: border-box;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -48,11 +49,16 @@ body {
 
 }
 
+.cur_dir {
+    color: #FC3565;
+    margin-right: 10px;
+}
+
 .output-cmd:before {
-    content: '> ';
     color: #FC3565;
     vertical-align: top;
 }
+
 .output-text:before {
     content: '> ';
     color: #5F8787;
@@ -63,32 +69,20 @@ body {
 .output-text,
 .output-cmd {
     width: 100%;
-    display: block;
+    display: flex;
+    flex-direction: row;
+    white-space: pre;
 }
 
 
-
-.output-text,
-.output-cmd {
-    display: block;
-    white-space: pre;
+.file {
+    display: none;
 }
 
 #outputs div {
     opacity: 0.85;
 }
 
-#outputs div div {
-    color: #46f01d;
-    opacity: 0.8;
-    text-decoration: none;
-}
-
-#outputs a {
-    color: #46f01d;
-    opacity: 0.8;
-    text-decoration: underline;
-}
 
 .console-inner .output-text#ready {
     color: #3df5b8;
